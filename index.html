@@ -3,10 +3,28 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" lang="en" name="" />
 	<title>API Starter - kickstarter for API projects - apistarter.com</title>
-	<meta name="Description" content="Kickstarter for API projects. Order &amp; buy an API, snippet. Freelancing programming developers C#, .Net, PHP, Scala, Ruby, Java, Javascript." />
-	<meta name="Keywords" content=",buy eyewear, buy eye glasses, buy frames, discount sunglasses, prescription sunglasses, authentic designer sunglasses, polarized sunglasses, designer eyeglasses, prescription eyeglasses, discount eyeglasses" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="jquery.address-1.4.min.js"></script>
+	<meta name="Description" content="Kickstarter for API projects. Order &amp; buy an API, code fragment. Freelancing programming developers C#, .Net, PHP, Scala, Ruby, Java, Javascript." />
+	<meta name="Keywords" content="buy api, buy component, .net control, freelancing, kickstarter api, flattr api, youtube api, history api, starter kit, stackoverflow api, 	
+crowd funding, crowdfunding websites, interface c#" />
+    
+    <!--
+
+	    ____            _ __                _____           __      __             
+	   / __ \____ ___  (_) /________  __   / ___/____ _____/ /___ _/ /______ _   __
+	  / / / / __ `__ \/ / __/ ___/ / / /   \__ \/ __ `/ __  / __ `/ //_/ __ \ | / /
+	 / /_/ / / / / / / / /_/ /  / /_/ /   ___/ / /_/ / /_/ / /_/ / ,< / /_/ / |/ / 
+	/_____/_/ /_/ /_/_/\__/_/   \__, /   /____/\__,_/\__,_/\__,_/_/|_|\____/|___/  
+	    ____  _                /____/          __    __    ______                  
+	   / __ \(_)___  ____ _____ ___  ____     / /   / /   / ____/                  
+	  / / / / / __ \/ __ `/ __ `__ \/ __ \   / /   / /   / /                       
+	 / /_/ / / / / / /_/ / / / / / / /_/ /  / /___/ /___/ /___                     
+	/_____/_/_/ /_/\__,_/_/ /_/ /_/\____/  /_____/_____/\____/                     
+
+
+	-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+	<script defer src="http://balupton.github.com/jquery-scrollto/scripts/jquery.scrollto.min.js"></script>
+	<script defer src="http://balupton.github.com/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
     <!-- thanks http://jq-metro.googlecode.com/files/  and http://code52.org -->
     <script type="text/javascript" src="jquery.metro.js"></script>
     <link type="text/css" rel="stylesheet" href="styles.css" />
@@ -37,7 +55,7 @@
 		<div class='metro-pivot'>
 		    <div class='pivot-item'>
 		        <h3>Concept</h3>
-		        <h4 class='accent-color'>- Everything has been built before.</h4>
+		        <h4 class='accent-color'>Everything that can be invented has been invented</h4>
 		        Code reusability should be higher. Even highly qualified IT consultants spend days programming the same logical interface to a utility class and extension methods. Stop it. Use open source or ask for an API built to be readily reused. 
 		        <h4 class='accent-color'>- Why write it yourself?</h4>
 		        Software projects are usually under-estimated. As <a href="http://www.codinghorror.com/blog/2006/11/its-never-been-built-before.html">Jeff Atwood</a> quoted: <i>"The only new software development projects undertaken are those that haven't been done before or those whose predecessors are not publicly available"</i>. <p>Can implement it in a day? Unit testing and full coverage? Maybe two days. Documentation? You're kidding. It'll be a small project just for you. Until the next project.<p>
@@ -87,18 +105,35 @@
 		    </div>
 		</div>
 	</div>
-	<footer>June 01, 2012 by <a href="http://dima.sadakov.com">Dmitry Sadakov</a></footer>
+	<footer>June, 2012 by <a href="http://dima.sadakov.com">Dmitry Sadakov</a></footer>
 	<script> 
 		var defaults = { animationDuration: 500, headerOpacity: 0.25, fixedHeaders: false, 
-				selectedItemChanged: function () { $.address.value($(".header.current")[0].innerText); }
+				selectedItemChanged: function () { 
+					//$.address.value($(".header.current")[0].innerText); }
+					var h3 = $(".header.current")[0];
+					var h3index = $('.header').index(h3);
+					History.pushState({state:h3index}, h3.innerText, "?state=" + h3.innerText);
+				}
 		};
 
 	 	$(function () {
             $("div.metro-pivot").metroPivot(defaults);
-            $.address.init().change(function(event) {
-            	$("div.metro-pivot").data("controller").goToItemByName(event.value.substring(1));
-        	});
+
             $('.jush').jush();
+
+		    var History = window.History; 
+		    if ( !History.enabled ) {
+		        return false; // History.js is disabled for this browser.
+		    }
+		    History.Adapter.bind(window,'statechange',function(){ 
+		        var State = History.getState(); 
+		        //History.log(State.data, State.title, State.url);
+		        $("div.metro-pivot").data("controller").goToItemByName(State.title);
+		    });
+
+            //$.address.init().change(function(event) {
+            //	$("div.metro-pivot").data("controller").goToItemByName(event.value.substring(1));
+        	//});
         });
 	</script>
 </body>
