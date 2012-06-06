@@ -54,7 +54,7 @@ crowd funding, crowdfunding websites, interface c#" />
 		<h2>kickstarter &amp; marketplace for API</h2>
 		<div class='metro-pivot'>
 		    <div class='pivot-item'>
-		        <h3>Concept</h3>
+		        <h3 data-historyid="1">Concept</h3>
 		        <h4 class='accent-color'>Everything that can be invented has been invented</h4>
 		        Code reusability should be higher. Even highly qualified IT consultants spend days programming the same logical interface to a utility class and extension methods. Stop it. Use open source or ask for an API built to be readily reused. 
 		        <h4 class='accent-color'>- Why write it yourself?</h4>
@@ -70,7 +70,7 @@ crowd funding, crowdfunding websites, interface c#" />
 		        
 		    </div>
 		    <div class='pivot-item'>
-		        <h3>Contact me</h3> 
+		        <h3 data-historyid="2">Contact me</h3> 
 		        <p>My name is Dmitry Sadakov, and I am a IT consultant for a financial institution in Manhattan, New York, USA. </p>
 		        <p>I can be reached at <a href="mailto:api@apistarter.com">api@apistarter.com</a> as well as on social media:
 					<ul>
@@ -84,12 +84,12 @@ crowd funding, crowdfunding websites, interface c#" />
 		        </p>
 		    </div>
 		    <div class='pivot-item'>
-		        <h3>Source of the site</h3> 
+		        <h3 data-historyid="3">Source of the site</h3> 
 		        Also there is a <a href="https://github.com/cDima/apistarter/">github repository</a> for the source of this site. Clone your own!
 		    </div>
 
 		    <div class='pivot-item'>
-		        <h3>Example</h3> 
+		        <h3 data-historyid="4">Example</h3> 
 		        Don't copy &amp; paste it from stackoverflow. Don't implement it yourself. Take a snippet:
 
 		    <pre class="jush">
@@ -111,30 +111,30 @@ crowd funding, crowdfunding websites, interface c#" />
 				selectedItemChanged: function () { 
 					//$.address.value($(".header.current")[0].innerText); }
 					var h3 = $(".header.current")[0];
-					var h3index = $('.header').index(h3);
-					History.pushState({state:h3index}, h3.innerText, "?state=" + h3.innerText);
+					var h3index = $(h3).attr("index");
+					History.pushState(null, h3.innerText, "?state=" + h3.innerText);
 				}
 		};
 
 	 	$(function () {
             $("div.metro-pivot").metroPivot(defaults);
-
             $('.jush').jush();
 
 		    var History = window.History; 
-		    if ( !History.enabled ) {
-		        return false; // History.js is disabled for this browser.
-		    }
 		    History.Adapter.bind(window,'statechange',function(){ 
 		        var State = History.getState(); 
-		        //History.log(State.data, State.title, State.url);
-		        $("div.metro-pivot").data("controller").goToItemByName(State.title);
+		        if (State.url !== "") $("div.metro-pivot").data("controller").goToItemByName(State.url);
 		    });
 
-            //$.address.init().change(function(event) {
-            //	$("div.metro-pivot").data("controller").goToItemByName(event.value.substring(1));
-        	//});
+		     var State = History.getState(); 
+		     if (State.url !== "") {
+		     	//$("div.metro-pivot").data("controller").goToItemByName(State.state);
+		     	$("div.metro-pivot").data("controller").goToItemByName(State.url);
+		     }
+		    
         });
+
+        
 	</script>
 </body>
 </html>
