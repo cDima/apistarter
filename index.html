@@ -123,13 +123,13 @@ crowd funding, crowdfunding websites, interface c#" />
 		    var History = window.History; 
 		    History.Adapter.bind(window,'statechange',function(){ 
 		        var State = History.getState(); 
-		        if (State.url !== "") $("div.metro-pivot").data("controller").goToItemByName(State.url);
+		        if (State.title !== "") $("div.metro-pivot").data("controller").goToItemByName(State.title);
 		    });
 
 		     var State = History.getState(); 
-		     if (State.url !== "") {
+		     if (State.title !== "") {
 		     	//$("div.metro-pivot").data("controller").goToItemByName(State.state);
-		     	$("div.metro-pivot").data("controller").goToItemByName(State.url);
+		     	$("div.metro-pivot").data("controller").goToItemByIndex(State.title);
 		     }
 		    
         });
