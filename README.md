@@ -1,6 +1,8 @@
 
-# API Starter
+# API Starter.com
 
-### Kickstarter for API projects!
+### Concepts and projects
 
-[APIStarter.com](http://cdima.github.com/apistarter/ "APIStarter.com").
+![APIStarter.com version 1](/apistarter-v2.png?raw=true "APIStarter.com version 1")
+
+[APIStarter.com](http://apistarter.com/ "APIStarter.com").
