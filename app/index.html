@@ -82,8 +82,21 @@
       <section class=clear>
          <div>
             <div class="container  text-divider center">
-               <p><b>Lightswitch</b> works as a plugin Google Chrome extension for Mac, Windows, and Chromebooks.</p>
+               <p><b>Lightswitch</b> works as a plugin Google Chrome extension for Mac, Windows, and Linux.</p>
                <p><a href=http://bit.ly/lightpro class="button--primary chrome-link">Install Lightswitch »</a></p>
+            </div>
+         </div>
+      </section>
+      <section class="subscribe">
+         <div class="container  text-divider center">
+            <p><b>Subscribe to our newsletter</b> to be the first to know about new features &amp; products:</p>
+            <div id="newsletter_form">
+              <form action="" method="post" class="subscribe-form" name="mc-embedded-subscribe-form"  id="mc-embedded-subscribe-form" novalidate>
+                  <input type="email" name="EMAIL" id="EMAIL" class="subscribe-input input" placeholder="Enter your e-mail address..." required="">
+                  <button  name="subscribe" type="submit"  id="mc-embedded-subscribe" value="Subscribe" class="subscribe-submit submit">Notify Me</button>
+                  <input type="text" style="display:none;" name="b_83c6f205a4379f5136e187d52_cad0da3b8a" tabindex="-1" value="">
+              </form>
+              <div class="successsubscribe">Thanks for subscribing, we will be in touch</div>
             </div>
          </div>
       </section>
@@ -94,13 +107,11 @@
             </header>
          </div>
       </footer>
-      <script src=scripts/main.min.js></script><script>
-         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-         ga('create', 'UA-32350099-1', 'auto');
-         ga('send', 'pageview');
-      </script>
+      <!-- build:js scripts/main.min.js -->
+      <script src="scripts/libs/jquery-1.11.1.min.js"></script>
+      <script src="scripts/ga.js"></script>
+      <script src="scripts/subscribe.js"></script>
+      <script src="scripts/main.js"></script>
+      <!-- endbuild -->
    </body>
 </html>
