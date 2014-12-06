@@ -54,10 +54,10 @@ gulp.task('jshint', function () {
 // Optimize Images
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin({
-      progressive: true,
-      interlaced: true
-    })))
+    //.pipe($.cache($.imagemin({
+    //  progressive: true,
+    //  interlaced: true
+    //})))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size({title: 'images'}));
 });
@@ -129,7 +129,7 @@ gulp.task('html', function () {
     // In case you are still using useref build blocks
     .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
-    .pipe(debug({verbose: true}))
+    //.pipe(debug({verbose: true}))
     .pipe($.useref())
     // Update Production Style Guide Paths
     .pipe($.replace('components/components.css', 'components/main.min.css'))
