@@ -31,7 +31,7 @@ function trackEvent(category, action, label, value, nonInteraction) {
 }
 
 
-mixpanel.track_links("a", "click nav link", {
+mixpanel.track_links("a", "click", {
     "referrer": document.referrer
 });
 
