@@ -17,6 +17,10 @@ ga('send', 'pageview');
 for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
 mixpanel.init("2d7b99b5dbf7b6e6d7940a91a7f0d973");
 
+mixpanel.track_links("a", "click", {
+    "referrer": document.referrer
+});
+
 function trackEvent(category, action, label, value, nonInteraction) {
 	if (nonInteraction === undefined) {
 		nonInteraction = 1;
@@ -31,8 +35,5 @@ function trackEvent(category, action, label, value, nonInteraction) {
 }
 
 
-mixpanel.track_links("a", "click", {
-    "referrer": document.referrer
-});
 
 /* jshint ignore:end */
