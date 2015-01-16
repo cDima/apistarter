@@ -1,0 +1,26 @@
+{
+  "name": "shine",
+  "version": "1.7.0",
+  "homepage": "https://github.com/cDima/apistarter",
+  "authors": [
+    "Dmitry Sadakov <sadakov@gmail.com>"
+  ],
+  "license": "Copyrighted",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "core-range": "Polymer/core-range#^0.5.0",
+    "core-selection": "Polymer/core-selection#^0.5.0",
+    "core-selector": "Polymer/core-selector#^0.5.0",
+    "paper-fab": "Polymer/paper-fab#~0.5.2",
+    "paper-ripple": "Polymer/paper-ripple#~0.5.2",
+    "polymer": "Polymer/polymer#~0.5.2",
+    "core-image": "Polymer/core-image#~0.5.2"
+  }
+}
