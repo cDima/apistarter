@@ -29,6 +29,7 @@
 	    }
 	    .center {
 	    	text-align: center;
+			max-width: 100%;
 	    }
 	    </style>
 	</head>
@@ -41,25 +42,29 @@
      				<paper-fab class="wow fadeInUp desktop-fab" icon="shop"></paper-fab>
      			</a>
 			</div>
+
 			<div class="wow fadeInUp content-card">
 				<a href="http://bit.ly/shinehue">
 					<paper-fab class="mobile-fab" icon="shop"></paper-fab>
 				</a>
-				
-				<div class="icon-and-title-flex">
-					<a href="http://bit.ly/shinehue">
-						<img src="img/logo.png" class="appicon"></img>
-					</a>
-					<div class="title-container">
+				<div>
+					<div style="display: flex; justify-content: flex-start;">
 						<a href="http://bit.ly/shinehue">
-							<span class="text-title">Shine for Philips Hue</span>
+							<!--<core-image src="img/logo.png"></core-icon>-->
+							<img class="center" src="img/logo.png"></img>
 						</a>
-						<br><div class="intertext-padding"></div>
-						<span class="text-subtitle">An app for Philips Hue lights</span>
-						<br><div class="intertext-padding"></div>
-						<span class="text-description">$2.99</span>
-					</div>	
+						<div class="title-container">
+							<a href="http://bit.ly/shinehue">
+								<span class="text-title">Shine for Philips Hue</span>
+							</a>
+							<br><div class="intertext-padding"></div>
+							<span class="text-subtitle">An app for Philips Hue lights</span>
+							<br><div class="intertext-padding"></div>
+							<span class="text-description">$2.99</span>
+						</div>	
+					</div>
 				</div>
+
 				<span class="text-description">
 				<p>
 				Shine for Philips Hue is an app to control Philip Hue wifi-connected lightbulbs straight from your computer.
@@ -71,9 +76,7 @@ You are only one press away from turning the lights on or off. Home automation w
 Works on Mac, Windows, Linux, and Chromebooks.
 </p>
 				<p class="center">
-
-				<core-image src="img/shine-twitter-promo.png"></core-image>
-
+				<img class="center" src="img/shine-twitter-promo.png"></img>
 				</p>
 				<p class="center">				
 					<a href="http://bit.ly/shinehue">
