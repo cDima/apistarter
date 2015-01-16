@@ -68,6 +68,7 @@ a:active
 .content-card	
 {
 	width: 70%; 
+	max-width: 1000px;
 	background-color: #fff; 
 	margin: auto; 
 	margin-top: 150px; 
@@ -264,6 +265,68 @@ a:active
 {
 	margin-top: 4em;
 }
+.feature {
+	max-width: 1000px;
+	margin: auto;
+	margin-top: 50px;
+}
+.appimg {
+	max-width: 320px;
+	padding: 20px;
+	margin-top: 0;
+	box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.2);
+	margin: auto;
+}
+ .feature-image,
+.feature-text {
+	min-width: 320px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;	
+}
+.thin {
+	max-width: 810px;
+	margin: auto;
+}
+
+paper-button[raised].colored {
+  background: #4285f4;
+  color: #fff;
+}
+.center {
+	text-align: center;
+	max-width: 100%;
+}
+
+.flex-row, .flex-column {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.flex-row.reversed {
+	flex-direction: row-reverse;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.content {
+  height: 2000px;
+  background: linear-gradient(rgb(214, 227, 231), lightblue);
+}
+.reversed .feature-text span {
+	margin-right: 0;
+	margin-left: auto;
+}
+.feature-text span {
+	width: 350px;
+	margin: auto;
+	margin-left: 0;
+}
+
 
 @media (min-width: 800px) and (max-width: 1100px) 
 {
