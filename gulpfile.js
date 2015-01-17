@@ -96,8 +96,8 @@ gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
       'app/styles/*.scss',
-      'app/styles/**/*.css',
-      'app/styles/components/components.scss'
+      'app/styles/**/*.css'
+      //,'app/styles/components/components.scss'
     ])
     .pipe($.changed('styles', {extension: '.scss'}))
     .pipe($.rubySass({
@@ -106,7 +106,7 @@ gulp.task('styles', function () {
       })
       .on('error', console.error.bind(console))
     )
-    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    //.pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate And Minify Styles
     .pipe($.if('*.css', $.csso()))
