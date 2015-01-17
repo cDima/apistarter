@@ -268,7 +268,7 @@ a:active
 .feature {
 	max-width: 1000px;
 	margin: auto;
-	margin-top: 50px;
+	margin-top: 10px;
 }
 .appimg {
 	max-width: 320px;
@@ -283,6 +283,11 @@ a:active
 	display: flex;
 	flex-wrap: wrap;
 	margin: auto;	
+	padding: 10px;
+}
+.feature-text {
+	min-width: 200px;
+	padding-top: 50px;
 }
 .thin {
 	max-width: 810px;
@@ -317,14 +322,20 @@ paper-button[raised].colored {
   height: 2000px;
   background: linear-gradient(rgb(214, 227, 231), lightblue);
 }
-.reversed .feature-text span {
-	margin-right: 0;
-	margin-left: auto;
-}
-.feature-text span {
-	width: 350px;
-	margin: auto;
-	margin-left: 0;
+
+@media (min-width: 1000px)
+{
+
+	.reversed .feature-text span {
+		margin-right: 0;
+		margin-left: auto;
+	}
+	.feature-text span {
+		width: 350px;
+		margin: auto;
+		margin-left: 0;
+	}
+
 }
 
 
