@@ -130,13 +130,26 @@ a:active
 
 .cover-image 
 {
-	background-image:url(../img/cover_image.jpg);
+	/*background-image:url(../img/cover_image.jpg);
 	background-size:cover;
 	background-position:center;
 	height:50%;
 	width:100%;
 	top:0;
 	position:absolute;
+	*/
+	top:0;
+	position:absolute;
+	height:50%;
+	width:100%;
+	background: linear-gradient(cyan, transparent), linear-gradient(-45deg, magenta, transparent), linear-gradient(45deg, #ff0, transparent);
+  	background-blend-mode: multiply;
+}
+
+
+.gradient {
+  background: linear-gradient(cyan, transparent), linear-gradient(-45deg, magenta, transparent), linear-gradient(45deg, #ff0, transparent);
+  background-blend-mode: multiply;
 }
 
 .icon-and-title-flex
@@ -432,4 +445,26 @@ paper-button[raised].colored {
 		width: 120px;
 		height: 120px;
 	}
+}
+
+.social-buttons {
+	list-style: none;
+	margin: 15px 0 5%;
+	text-align: center;
+}
+
+.social-buttons li {
+display: inline-block;
+margin: 0 5px;
+height: 24px;
+vertical-align: top;
+}
+.tweet-btn {
+width: 100px;
+}
+.fb-btn {
+width: 100px;
+}
+.gplus-btn {
+width: 90px;
 }
