@@ -26,5 +26,8 @@
     "gplus-elements": "~0.2.1",
     "facebook-button": "~0.1.5",
     "twitter-button": "~0.1.7"
+  },
+  "devDependencies": {
+    "trianglify": "~0.1.5"
   }
 }
