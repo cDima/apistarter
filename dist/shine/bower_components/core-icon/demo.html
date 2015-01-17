@@ -1,0 +1,10 @@
+<!doctype html><html><head><title>core-icon</title><script src=../webcomponentsjs/webcomponents.js></script><link rel=import href=../core-icons/core-icons.html><link rel=import href=core-icon.html><style>
+    segment {
+      min-width: 200px;
+    }
+
+    core-icon.big {
+      height: 128px;
+      width: 128px;
+    }
+  </style></head><body unresolved=""><template is=auto-binding><div wrap="" horizontal="" layout=""><template repeat="{{icon in $.meta.metaData.icons.iconNames}}"><segment><core-icon icon={{icon}}></core-icon>{{icon}}</segment></template></div><core-iconset id=meta></core-iconset><div hidden?={{!$.meta.metaData.icons.iconNames}}>Sized icon:<core-icon class=big icon=accessibility></core-icon></div></template></body></html>
