@@ -63,7 +63,7 @@ gulp.task('images', function () {
 });
 
 // Copy All Files At The Root Level (app)
-gulp.task('copy', function () {
+gulp.task('copy', ['bower'], function () {
   return gulp.src([
     'app/*',
     '!app/*.html',
@@ -72,6 +72,16 @@ gulp.task('copy', function () {
     dot: true
   }).pipe(gulp.dest('dist'))
     .pipe($.size({title: 'copy'}));
+});
+
+// Copy Bower components
+gulp.task('bower', function () {
+  return gulp.src([
+    'app/bower_components/**/*'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist/bower_components'))
+    .pipe($.size({title: 'bower'}));
 });
 
 // Copy Web Fonts To Dist
@@ -111,10 +121,16 @@ gulp.task('html', function () {
   return gulp.src('app/**/*.html')
     .pipe(assets)
     // Concatenate And Minify JavaScript
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    // UGLIFY
     .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
     // Remove Any Unused CSS
     // Note: If not using the Style Guide, you can delete it from
     // the next line to only include styles your project uses.
+    /*
     .pipe($.if('*.css', $.uncss({
       html: [
         'app/index.html'
@@ -125,11 +141,12 @@ gulp.task('html', function () {
         /.app-bar.open/
       ]
     })))
+    */
     // Concatenate And Minify Styles
     // In case you are still using useref build blocks
     .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
-    //.pipe(debug({verbose: true}))
+    .pipe(debug({verbose: true}))
     .pipe($.useref())
     // Update Production Style Guide Paths
     .pipe($.replace('components/components.css', 'components/main.min.css'))
