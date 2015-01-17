@@ -146,7 +146,7 @@ gulp.task('html', function () {
     // In case you are still using useref build blocks
     .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
-    .pipe(debug({verbose: true}))
+    //.pipe(debug({verbose: true}))
     .pipe($.useref())
     // Update Production Style Guide Paths
     .pipe($.replace('components/components.css', 'components/main.min.css'))
