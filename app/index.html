@@ -26,8 +26,6 @@
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-      <script src="scripts/ga.js"></script>
-
       <script src="http://d3js.org/d3.v3.min.js"></script>
       <script src="bower_components/trianglify/trianglify.min.js"></script>
 
@@ -111,7 +109,7 @@
             <h4 class="padtopandbottom center">Featured Applications and Websites</h4>
          
             <div class="works-card">
-               <a href="#">
+               <a href="https://chrome.google.com/webstore/detail/shine-for-philips-hue/ahhkdhdkelfamkepplgbeidokokhokbp" target="_blank">
                   <div class="works-subcard center">
                      <core-image style="width:128px; height:128px;max-width: 100%;" class="top-corners-rounded" sizing="contain" 
                         src="images/projects/shine.png" ></core-image>
@@ -120,34 +118,17 @@
                   </div>
                </a>     
             </div>
-            
+
             <div class="works-card">
-               <a href="#">
-                  <div class="works-subcard center">
-                     <core-image style="width:128px; height:128px;max-width: 100%;" class="top-corners-rounded" sizing="contain" 
-                        src="images/projects/polymer.svg" ></core-image>
-                     <span class="work-title">Material</span> 
-                     <paper-ripple fit></paper-ripple>
-                  </div>   
-               </a>  
+               <div class="works-subcard center" style="cursor: default;">
+                  <core-image style="width:128px; height:128px;max-width: 100%;" class="top-corners-rounded" sizing="contain" 
+                     src="images/projects/gazprom.png" ></core-image>
+                  <span class="work-title">Gazprom</span>
+               </div>   
             </div>
             
-            
             <div class="works-card">
-               <a href="#">
-                  <div class="works-subcard center">
-                     <core-image style="width:128px; height:128px;max-width: 100%;" class="top-corners-rounded" sizing="contain" 
-                        src="images/projects/gazprom.png" ></core-image>
-                     <span class="work-title">Gazprom</span>
-                     <paper-ripple fit></paper-ripple>
-                  </div>   
-               </a>  
-            </div>
-            
-            
-            
-            <div class="works-card">
-               <a href="#">
+               <a href="http://ourmoney.ru" target="_blank">
                   <div class="works-subcard center">
                      <core-image style="width:128px; height:128px;max-width: 100%;" class="top-corners-rounded" sizing="contain" 
                         src="images/projects/ourmoney.jpg" ></core-image>
@@ -160,7 +141,7 @@
             
             
             <div class="works-card">
-               <a href="#">
+               <a href="http://zippywines.com" target="_blank">
                   <div class="works-subcard center">
                      <core-image style="width:128px; height:128px;max-width: 100%;" class="top-corners-rounded" sizing="contain" 
                         src="images/projects/zwine.png" ></core-image>
@@ -169,6 +150,7 @@
                   </div>   
                </a>  
             </div>
+
             <div class="works-card">
                <a href="http://petrograff.ru" target="_blank" >
                      <div class="works-subcard center">
@@ -179,6 +161,20 @@
                      </div>   
                </a>     
             </div>
+
+            
+            <div class="works-card">
+               <a href="http://ambieye.com"  target="_blank">
+                  <div class="works-subcard center">
+                     <core-image style="width:128px; height:128px;max-width: 100%;" class="top-corners-rounded" sizing="contain" 
+                        src="images/projects/polymer.svg" ></core-image>
+                     <span class="work-title">Ambieye</span> 
+                     <paper-ripple fit></paper-ripple>
+                  </div>   
+               </a>  
+            </div>
+            
+            
          </div>
 
          <div class="wow fadeInUp thin content-card" style="margin-top: 50px;">
@@ -417,6 +413,16 @@
             });
          });
 
+(function(_, __) {
+_._errs = []; var h = _.onerror; var f = function() { var a = arguments; _errs.push(a); h && h.apply(this, a)};
+var sf = __.createElement('script');sf.type = 'text/javascript';sf.async = true;sf.id = 'onscriptfail';
+sf.src = '//script.fail/inform?sadakov@gmail.com';
+var s = __.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sf, s);
+_.onerror = f;
+})(window, document);
+
+
+
         /*var t = new Trianglify({
             noiseIntensity: 0,
             cellsize: 90
@@ -429,7 +435,6 @@
       <!-- build:js scripts/main.min.js -->
       <script src="scripts/libs/jquery-1.11.1.min.js"></script>
       <script src="scripts/ga.js"></script>
-      <script src="scripts/subscribe.js"></script>
       <script src="scripts/main.js"></script>
       <!-- endbuild -->
    </body>
